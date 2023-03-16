@@ -1,5 +1,5 @@
 import  Image  from "next/image";
-
+import Link from 'next/link'
 export default function RecipeCard ({ recipe }) {
 
     const {name: title, slug, thumbnail , cookingTime} = recipe.fields
@@ -10,11 +10,11 @@ export default function RecipeCard ({ recipe }) {
     
 
     return (
-        <a href="#" className="block rounded-lg p-4 shadow-sm shadow-indigo-100">
+        <div className="block rounded-lg p-4 shadow-sm shadow-indigo-100">
          <Image 
          src={'https:'+thumbnail.fields.file.url}
-         width={300}
-         height={300}
+         width={250}
+         height={250}
          />
         <div className="mt-2">
           <dl>
@@ -55,8 +55,13 @@ export default function RecipeCard ({ recipe }) {
       
             
           </div>
+          
         </div>
-      </a>
+
+         <div className="mt-4 justify-end flex">
+            <Link href={`/recipes/${slug}`} className="bg-indigo-500 text-white px-4 py-2 rounded-full shadow-indigo-200"> Cook This  </Link>
+         </div>
+      </div>
       
     )
 
