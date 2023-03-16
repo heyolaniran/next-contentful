@@ -28,6 +28,8 @@ export async function getStaticProps () {
 
 export default function Home({ recipes }) {
  
+
+
   return (
     <>
      
