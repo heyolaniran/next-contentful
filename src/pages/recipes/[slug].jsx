@@ -40,6 +40,15 @@ const client = createClient ({
     })
 
 
+    if( !items.length ) {
+        return {
+            redirect : {
+                destination: '/404', 
+                permanent: false 
+            }
+        }
+    }
+
 
     return {
        props : {
