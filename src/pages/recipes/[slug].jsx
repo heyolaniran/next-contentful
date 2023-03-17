@@ -3,6 +3,7 @@ import {createClient} from 'contentful'
 import Image from 'next/image'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Skeleton from '@/Components/Skeleton'
 
 const client = createClient ({ 
     space: process.env.CONTENTFUL_SPACE,
@@ -26,7 +27,7 @@ const client = createClient ({
 
    return {
     paths, 
-    fallback:false 
+    fallback:true  
    }
 
   }
@@ -55,6 +56,10 @@ const client = createClient ({
 
 export default function RecepeDetails ({ recipe }) {
 
+
+    if( ! recipe) return (
+        <Skeleton />
+    )
  
   
     return (
