@@ -29,6 +29,7 @@ export default function Comments () {
 
     }
 
+
     useEffect(() => {
         fetchComments()      
     }, [comments])
@@ -59,8 +60,9 @@ export default function Comments () {
                     }}>
                     </textarea>
 
+
                     <div className="mt-4">
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded-full " onClick={postComment}>Post Comment </button>
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded-full " onClick={postComment}>   Post Comment </button>
                     </div>
                 </div>
             </div>
