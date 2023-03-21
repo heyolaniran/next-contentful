@@ -29,12 +29,24 @@ export default function Comments () {
 
     }
 
-    
+    const deleteComment = async (commentId) => {
+        
+        const response = await fetch('/api/comments/'+commentId, {
+            method: 'DELETE'
+        }) 
+        const data = await response.json()
+       
+        fetchComments()
+    }
 
-    useEffect(() => {
-        fetchComments()      
-    }, [comments])
-    
+   useEffect(() => {
+        fetchComments()
+   }, [comment])
+   
+
+
+
+
 
    
     return (
@@ -46,9 +58,16 @@ export default function Comments () {
             <div className="grid xs:grid-cols-1 md:grid-cols-3 gap-4">
                 {comments && (
                     comments.map(comment => (
-                        <div className="" key={comment.id}>
-                            {comment.text}
+                        <div>
+                            <div className="" key={comment.id}>
+                                {comment.text}
+                            </div>
+
+                            <div className="mt-4 justify-center flex">
+                                <button className="bg-red-400 text-white rounded-full px-2 py-1" onClick={() => deleteComment(comment.id)}> Delete  </button>
+                            </div>
                         </div>
+                       
                     ))
                 )}
             </div>
