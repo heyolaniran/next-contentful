@@ -12,6 +12,7 @@
     "@contentful/rich-text-react-renderer": "^15.16.3",
     "contentful": "^9.3.5",
     "next": "13.2.4",
+    "next-auth": "^4.20.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import {signIn, signOut} from "next-auth/react"
 export default function NavBar () {
 
     return  (
@@ -62,7 +62,11 @@ export default function NavBar () {
                 <Link  className="text-gray-900" href="">About</Link>
                 <Link className="text-gray-900" href="">Blog</Link>
                 <Link className="text-gray-900" href="">Projects</Link>
-                <Link className="text-gray-900" href="">Contact</Link>
+                <Link   className="text-gray-900" href="/api/auth/signout" onClick={(e) => {
+                    e.preventDefault(); 
+                    signOut() 
+                }}>Sing Out </Link>
+                
                 </nav>
 
                 
